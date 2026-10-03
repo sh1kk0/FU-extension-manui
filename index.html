@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>JRPG Battle HUD</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800&family=EB+Garamond:ital,wght@0,500;0,700;1,500;1,600&display=swap">
+  <script type="module" crossorigin src="./assets/main-DE6abkpQ.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/state-D2CRNKM8.js">
+  <link rel="stylesheet" crossorigin href="./assets/style-DrESjHlq.css">
+</head>
+<body>
+  <div class="panel"><div class="panel-title">Ordem de turno</div><div id="turn-strip"></div></div>
+
+  <nav class="tabs" id="tabs">
+    <button class="tab-btn" data-tab="battle">Batalha</button>
+    <button class="tab-btn" data-tab="glossary">Glossário</button>
+    <button class="tab-btn" data-tab="clocks">Relógios</button>
+    <button class="tab-btn" data-tab="icons">Ícones</button>
+    <button class="tab-btn" data-tab="gm" id="tab-gm-btn" style="display:none">🔒 Mestre</button>
+  </nav>
+
+  <section class="tab-section" id="tab-battle">
+    <div class="panel"><div class="panel-title">Ação</div><div id="action-area"></div>
+      <button class="full-btn" id="btn-reset-queue">Reiniciar fila (todos)</button></div>
+    <div class="panel"><div class="panel-title">Grupo</div><div id="party-list"></div></div>
+    <div class="panel"><div class="panel-title">Seus personagens</div><div id="roster"></div>
+      <button class="full-btn" id="btn-add-char">+ Novo personagem</button></div>
+  </section>
+
+  <section class="tab-section" id="tab-glossary">
+    <div class="panel">
+      <div class="panel-title">Glossário</div>
+      <div id="glossary-list"></div>
+      <div class="field-row"><input type="text" id="gl-term" placeholder="Termo (ex: Crisis)" maxlength="40" /></div>
+      <div class="field-row"><textarea id="gl-desc" placeholder="Descrição, com suas próprias palavras" rows="3"></textarea></div>
+      <button class="full-btn" id="gl-add">+ Adicionar termo</button>
+    </div>
+  </section>
+
+  <section class="tab-section" id="tab-clocks">
+    <div class="panel">
+      <div class="panel-title">Relógios</div>
+      <div id="clocks-list"></div>
+      <div class="field-row"><input type="text" id="clock-name" placeholder="Nome do relógio" maxlength="30" /></div>
+      <div class="field-row"><label>Seções</label><select id="clock-size"></select></div>
+      <button class="full-btn" id="clock-add">+ Novo relógio</button>
+    </div>
+  </section>
+
+  <section class="tab-section" id="tab-icons">
+    <div class="panel">
+      <div class="panel-title">Ícones</div>
+      <div class="field-row"><label style="width:auto">Aplicar em</label><select id="icon-target"></select></div>
+      <div id="icon-grid"></div>
+      <button class="full-btn" data-icon-clear="1">Voltar pro emoji</button>
+      <div class="sub-title" style="color:#ffd76a">Adicionar imagem</div>
+      <div class="field-row"><input type="text" id="icon-name" placeholder="Nome" maxlength="24" /></div>
+      <div class="field-row"><input type="text" id="icon-url" placeholder="Link da imagem (https://...)" /></div>
+      <button class="full-btn" id="icon-add">+ Salvar na biblioteca</button>
+      <div class="waiting-msg">Dica: ao vincular um token a uma ficha, a imagem do token vira o retrato automaticamente.</div>
+    </div>
+  </section>
+
+  <section class="tab-section" id="tab-gm">
+    <div class="panel gm-panel">
+      <div class="panel-title">🔒 Só o mestre</div>
+      <div class="field-row"><textarea id="gm-notes" placeholder="Anotações secretas do mestre" rows="4"></textarea></div>
+      <div class="sub-title">Todas as fichas</div>
+      <div id="gm-chars"></div>
+    </div>
+  </section>
+
+</body>
+</html>
