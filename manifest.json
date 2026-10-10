@@ -1,0 +1,15 @@
+{
+  "manifest_version": 1,
+  "name": "JRPG Battle HUD",
+  "version": "6.2.0",
+  "description": "HUD de batalha JRPG: turnos, fichas nos tokens, barra de boss, glossário e painel do mestre.",
+  "icon": "/icon.svg",
+  "background_url": "/background.html",
+  "action": {
+    "title": "Battle HUD",
+    "icon": "/icon.svg",
+    "popover": "/index.html",
+    "height": 640,
+    "width": 400
+  }
+}
